@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var username = ""
+    @State var password = ""
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack{
+            TextField("Username", text: $username)
+                .textContentType(.username)
+            
+            TextField("Password", text: $password)
+                .textContentType(.password)
+        }
+        .padding([.leading, .trailing], 50)
     }
 }
 
