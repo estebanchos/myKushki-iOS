@@ -10,14 +10,15 @@ import SwiftUI
 struct ContentView: View {
     @State var username = ""
     @State var password = ""
+    @State var isAuthenticated: Bool = false
     
     var body: some View {
         VStack() {
-                   Text("Welcome to myKushki!")
+                   Text("Welcome to myKushki")
                        .font(.title)
+                       .bold()
                        .foregroundColor(Color.white)
                        .padding([.top, .bottom], 50)
-                       .shadow(radius: 6.0, x: 10, y: 10)
                    
                    VStack(alignment: .leading, spacing: 15) {
                        TextField("Username", text: $username)
@@ -26,21 +27,14 @@ struct ContentView: View {
                            .padding()
                            .background(Color(.white))
                            .cornerRadius(25.0)
-                           .shadow(radius: 10.0, x: 5, y: 10)
                        
                        SecureField("Password", text: $password)
                            .textContentType(.password)
                            .padding()
                            .background(Color(.white))
                            .cornerRadius(25.0)
-                           .shadow(radius: 10.0, x: 5, y: 10)
                    }
                    .padding([.leading, .trailing], 50)
-                   Button(action: {} ) {
-                       Text("Forgot password?")
-                           .padding([.leading], 150)
-                           .foregroundColor(.white)
-                   }
                    
                    Button(action: { }) {
                        Text("Sign In")
@@ -48,9 +42,9 @@ struct ContentView: View {
                            .foregroundColor(.white)
                            .padding()
                            .frame(width: 200, height: 60)
-                           .background(Color("Orange"))
+                           .background(Color("button"))
                            .cornerRadius(20.0)
-                           .shadow(radius: 10.0, x: 20, y: 10)
+                           .shadow(radius: 10.0, x: 10, y: 10)
                    }.padding(.top, 50)
                    
                    Spacer()
@@ -59,11 +53,13 @@ struct ContentView: View {
                            .foregroundColor(.white)
                        Button(action: {}) {
                            Text("Sign Up")
-                           .foregroundColor(.yellow)
+                           .foregroundColor(.white)
+                           .bold()
+                           .underline()
                        }
                    }
                }
-        .background(Color("myKushki"))
+        .background(Color("mk-main"))
             
     }
 }
@@ -71,5 +67,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            
     }
 }
