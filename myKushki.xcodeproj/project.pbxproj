@@ -11,6 +11,7 @@
 		C43B727D287CCBCF0001E696 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43B727C287CCBCF0001E696 /* ContentView.swift */; };
 		C43B727F287CCBD20001E696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C43B727E287CCBD20001E696 /* Assets.xcassets */; };
 		C43B7282287CCBD20001E696 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C43B7281287CCBD20001E696 /* Preview Assets.xcassets */; };
+		C43B728C287DDF2B0001E696 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43B728B287DDF2B0001E696 /* Webservice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		C43B727C287CCBCF0001E696 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C43B727E287CCBD20001E696 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C43B7281287CCBD20001E696 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C43B728B287DDF2B0001E696 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,8 @@
 		C43B7279287CCBCF0001E696 /* myKushki */ = {
 			isa = PBXGroup;
 			children = (
+				C43B728A287DDF0C0001E696 /* Services */,
+				C43B7288287DDEFB0001E696 /* Models */,
 				C43B727A287CCBCF0001E696 /* myKushkiApp.swift */,
 				C43B727C287CCBCF0001E696 /* ContentView.swift */,
 				C43B727E287CCBD20001E696 /* Assets.xcassets */,
@@ -65,6 +69,21 @@
 				C43B7281287CCBD20001E696 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C43B7288287DDEFB0001E696 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C43B728A287DDF0C0001E696 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C43B728B287DDF2B0001E696 /* Webservice.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +158,7 @@
 			files = (
 				C43B727D287CCBCF0001E696 /* ContentView.swift in Sources */,
 				C43B727B287CCBCF0001E696 /* myKushkiApp.swift in Sources */,
+				C43B728C287DDF2B0001E696 /* Webservice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
