@@ -13,6 +13,9 @@
 		C43B7282287CCBD20001E696 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C43B7281287CCBD20001E696 /* Preview Assets.xcassets */; };
 		C43B728C287DDF2B0001E696 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43B728B287DDF2B0001E696 /* Webservice.swift */; };
 		C43B728F287DE2390001E696 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43B728E287DE2390001E696 /* LoginVM.swift */; };
+		C43B7291287DE66E0001E696 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43B7290287DE66E0001E696 /* Expense.swift */; };
+		C43B7293287DE6E50001E696 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43B7292287DE6E50001E696 /* Budget.swift */; };
+		C43B7295287DE8F00001E696 /* BudgetListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43B7294287DE8F00001E696 /* BudgetListVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		C43B7281287CCBD20001E696 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C43B728B287DDF2B0001E696 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		C43B728E287DE2390001E696 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		C43B7290287DE66E0001E696 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		C43B7292287DE6E50001E696 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		C43B7294287DE8F00001E696 /* BudgetListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,7 @@
 		C43B7279287CCBCF0001E696 /* myKushki */ = {
 			isa = PBXGroup;
 			children = (
+				C43B7296287E0CB20001E696 /* Views */,
 				C43B728D287DE2290001E696 /* View Models */,
 				C43B728A287DDF0C0001E696 /* Services */,
 				C43B7288287DDEFB0001E696 /* Models */,
@@ -77,6 +84,8 @@
 		C43B7288287DDEFB0001E696 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C43B7290287DE66E0001E696 /* Expense.swift */,
+				C43B7292287DE6E50001E696 /* Budget.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -93,8 +102,16 @@
 			isa = PBXGroup;
 			children = (
 				C43B728E287DE2390001E696 /* LoginVM.swift */,
+				C43B7294287DE8F00001E696 /* BudgetListVM.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		C43B7296287E0CB20001E696 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,7 +184,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C43B7291287DE66E0001E696 /* Expense.swift in Sources */,
 				C43B727D287CCBCF0001E696 /* ContentView.swift in Sources */,
+				C43B7293287DE6E50001E696 /* Budget.swift in Sources */,
+				C43B7295287DE8F00001E696 /* BudgetListVM.swift in Sources */,
 				C43B728F287DE2390001E696 /* LoginVM.swift in Sources */,
 				C43B727B287CCBCF0001E696 /* myKushkiApp.swift in Sources */,
 				C43B728C287DDF2B0001E696 /* Webservice.swift in Sources */,

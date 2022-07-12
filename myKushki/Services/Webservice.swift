@@ -12,6 +12,12 @@ enum AuthenticationError: Error {
     case custom(errorMessage: String)
 }
 
+enum NetworkError: Error {
+    case invalidURL
+    case noData
+    case decodingError
+}
+
 struct LoginRequest: Codable {
     let email: String
     let password: String
@@ -61,6 +67,32 @@ class Webservice {
         }.resume()
     }
     
-    
+    func getUserBudget(token: String, completion: @escaping (Result<[Budget], NetworkError>) -> Void) {
+        
+        guard let url = URL(string: "https://mykushki-serv.herokuapp.com/users/budget") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.addValue(token, forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            guard let data = data, error == nil else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            guard let budget = try? JSONDecoder().decode([Budget].self, from: data) else {
+                completion(.failure(.decodingError))
+                return
+            }
+            
+            completion(.success(budget))
+            
+        }.resume()
+        
+    }
     
 }
