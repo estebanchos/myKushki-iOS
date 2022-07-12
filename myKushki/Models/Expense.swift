@@ -11,6 +11,6 @@ struct Expense: Decodable {
     let item: String
     let category: String
     let amount: Double
-    let id: String
+    let _id: String
 }
 

@@ -1,5 +1,5 @@
 //
-//  BudgetListVM.swift
+//  ExpenseListVM.swift
 //  myKushki
 //
 //  Created by Carlos O on 2022-07-12.
@@ -7,26 +7,24 @@
 
 import Foundation
 
-class BudgetListViewModel: ObservableObject {
+class ExpenseListViewModel: ObservableObject {
     
-    @Published var budget: [BudgetViewModel] = []
+    @Published var expenses: [ExpenseViewModel] = []
     
-    func getAllBudget() {
+    func getAllExpenses() {
         
         let defaults = UserDefaults.standard
         guard let token = defaults.string(forKey: "token") else {
             return
         }
         
-        Webservice().getUserBudget(token: token) { (result) in
+        Webservice().getUserExpenses(token: token) { (result) in
             switch result {
                 case .success(let budget):
-                    print("successful fetch")
                     DispatchQueue.main.async {
-                        self.budget = budget.map(BudgetViewModel.init)
+                        self.expenses = budget.map(ExpenseViewModel.init)
                     }
                 case .failure(let error):
-                    print("unsuccessful fetch")
                     print(error.localizedDescription)
             }
         }
@@ -35,18 +33,22 @@ class BudgetListViewModel: ObservableObject {
     
 }
 
-struct BudgetViewModel {
-    let budget: Budget
+struct ExpenseViewModel {
+    let expense: Expense
     
     var id: String {
-        return budget._id
+        return expense._id
+    }
+    
+    var item: String {
+        return expense.item
     }
     
     var category: String {
-        return budget.category
+        return expense.category
     }
     
     var amount: Double {
-        return budget.amount
+        return expense.amount
     }
 }

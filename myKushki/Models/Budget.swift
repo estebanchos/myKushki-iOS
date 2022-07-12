@@ -10,5 +10,5 @@ import Foundation
 struct Budget: Decodable {
     let category: String
     let amount: Double
-    let id: String
+    let _id: String
 }

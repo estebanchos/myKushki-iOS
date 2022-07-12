@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C417B4B2287E1DE30011A33D /* ExpenseListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C417B4B1287E1DE30011A33D /* ExpenseListVM.swift */; };
 		C43B727B287CCBCF0001E696 /* myKushkiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43B727A287CCBCF0001E696 /* myKushkiApp.swift */; };
 		C43B727D287CCBCF0001E696 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43B727C287CCBCF0001E696 /* ContentView.swift */; };
 		C43B727F287CCBD20001E696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C43B727E287CCBD20001E696 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C417B4B1287E1DE30011A33D /* ExpenseListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseListVM.swift; sourceTree = "<group>"; };
 		C43B7277287CCBCF0001E696 /* myKushki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myKushki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C43B727A287CCBCF0001E696 /* myKushkiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myKushkiApp.swift; sourceTree = "<group>"; };
 		C43B727C287CCBCF0001E696 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				C43B728E287DE2390001E696 /* LoginVM.swift */,
 				C43B7294287DE8F00001E696 /* BudgetListVM.swift */,
+				C417B4B1287E1DE30011A33D /* ExpenseListVM.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				C43B7293287DE6E50001E696 /* Budget.swift in Sources */,
 				C43B7295287DE8F00001E696 /* BudgetListVM.swift in Sources */,
 				C43B728F287DE2390001E696 /* LoginVM.swift in Sources */,
+				C417B4B2287E1DE30011A33D /* ExpenseListVM.swift in Sources */,
 				C43B727B287CCBCF0001E696 /* myKushkiApp.swift in Sources */,
 				C43B728C287DDF2B0001E696 /* Webservice.swift in Sources */,
 			);

@@ -75,7 +75,7 @@ class Webservice {
         }
         
         var request = URLRequest(url: url)
-        request.addValue(token, forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             
@@ -92,7 +92,33 @@ class Webservice {
             completion(.success(budget))
             
         }.resume()
+    }
+    
+    func getUserExpenses(token: String, completion: @escaping (Result<[Expense], NetworkError>) -> Void) {
         
+        guard let url = URL(string: "https://mykushki-serv.herokuapp.com/users/expenses") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            guard let data = data, error == nil else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            guard let expenses = try? JSONDecoder().decode([Expense].self, from: data) else {
+                completion(.failure(.decodingError))
+                return
+            }
+            
+            completion(.success(expenses))
+            
+        }.resume()
     }
     
 }
