@@ -12,6 +12,7 @@
 		C43B727F287CCBD20001E696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C43B727E287CCBD20001E696 /* Assets.xcassets */; };
 		C43B7282287CCBD20001E696 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C43B7281287CCBD20001E696 /* Preview Assets.xcassets */; };
 		C43B728C287DDF2B0001E696 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43B728B287DDF2B0001E696 /* Webservice.swift */; };
+		C43B728F287DE2390001E696 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43B728E287DE2390001E696 /* LoginVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		C43B727E287CCBD20001E696 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C43B7281287CCBD20001E696 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C43B728B287DDF2B0001E696 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		C43B728E287DE2390001E696 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		C43B7279287CCBCF0001E696 /* myKushki */ = {
 			isa = PBXGroup;
 			children = (
+				C43B728D287DE2290001E696 /* View Models */,
 				C43B728A287DDF0C0001E696 /* Services */,
 				C43B7288287DDEFB0001E696 /* Models */,
 				C43B727A287CCBCF0001E696 /* myKushkiApp.swift */,
@@ -84,6 +87,14 @@
 				C43B728B287DDF2B0001E696 /* Webservice.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		C43B728D287DE2290001E696 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				C43B728E287DE2390001E696 /* LoginVM.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C43B727D287CCBCF0001E696 /* ContentView.swift in Sources */,
+				C43B728F287DE2390001E696 /* LoginVM.swift in Sources */,
 				C43B727B287CCBCF0001E696 /* myKushkiApp.swift in Sources */,
 				C43B728C287DDF2B0001E696 /* Webservice.swift in Sources */,
 			);

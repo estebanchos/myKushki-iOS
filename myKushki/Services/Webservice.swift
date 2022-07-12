@@ -13,7 +13,7 @@ enum AuthenticationError: Error {
 }
 
 struct LoginRequest: Codable {
-    let username: String
+    let email: String
     let password: String
 }
 
@@ -25,14 +25,14 @@ struct LoginResponse: Codable {
 
 class Webservice {
     
-    func login(username: String, password:String, completion: @escaping (Result<String, AuthenticationError>) -> Void) {
+    func login(email: String, password:String, completion: @escaping (Result<String, AuthenticationError>) -> Void) {
         
         guard let url = URL(string: "https://mykushki-serv.herokuapp.com/users/login") else {
             completion(.failure(.custom(errorMessage: "URL is not correct")))
             return
         }
         
-        let body = LoginRequest(username: username, password: password)
+        let body = LoginRequest(email: email, password: password)
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -60,4 +60,7 @@ class Webservice {
             
         }.resume()
     }
+    
+    
+    
 }
