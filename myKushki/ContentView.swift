@@ -14,7 +14,7 @@ struct ContentView: View {
     @StateObject private var expensesListVM = ExpenseListViewModel()
     
     var body: some View {
-        if !loginVM.isAuthenticated {
+        if loginVM.isAuthenticated {
             VStack() {
                 Text("Welcome to myKushki")
                     .font(.title)
@@ -114,14 +114,23 @@ struct ContentView: View {
                         .headerProminence(.increased)
                     }
                     .listStyle(.plain)
-//                    List {
-//
-//                    }
-//                    .listStyle(.plain)
+
                 }
                 .padding([.leading, .trailing], 10)
                 .background(Color("mk-main"))
                 Spacer()
+                
+                Button {
+                    Task {
+                        loginVM.logout()
+                    }
+                }label: {
+                    Image(systemName:  "rectangle.portrait.and.arrow.right")
+                        .foregroundColor(.white)
+                    Text("Sign Out")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                }
             }
             .background(Color("mk-main"))
             
