@@ -9,23 +9,24 @@ import Foundation
 
 class LoginViewModel: ObservableObject {
     
-    var email: String = ""
-    var password: String = ""
     @Published var isAuthenticated: Bool = false
+    @Published var token:String = ""
     
-    func login() {
+    func login(email:String, password:String) {
         
         let defaults = UserDefaults.standard
-        
+        print("email is \(email) and password \(password)")
         Webservice().login(email: email, password: password) { result in
             switch result {
-            case .success(let token):
-                defaults.setValue(token, forKey: "token")
-                DispatchQueue.main.async {
-                    self.isAuthenticated = true
-                }
-            case .failure(let error):
-                print(error.localizedDescription)
+                case .success(let token):
+                    print("setting token with \(token)")
+                    defaults.setValue(token, forKey: "token")
+                    DispatchQueue.main.async {
+                        self.isAuthenticated = true
+                        self.token = token
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
             }
         }
     }
@@ -35,6 +36,7 @@ class LoginViewModel: ObservableObject {
         defaults.removeObject(forKey: "token")
         DispatchQueue.main.async {
             self.isAuthenticated = false
+            self.token = ""
         }
     }
     

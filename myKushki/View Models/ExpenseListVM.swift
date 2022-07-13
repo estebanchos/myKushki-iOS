@@ -11,20 +11,23 @@ class ExpenseListViewModel: ObservableObject {
     
     @Published var expenses: [ExpenseViewModel] = []
     
-    func getAllExpenses() {
+    func getAllExpenses(token:String) {
         
-        let defaults = UserDefaults.standard
-        guard let token = defaults.string(forKey: "token") else {
-            return
-        }
+//        let defaults = UserDefaults.standard
+//        guard let token = defaults.string(forKey: "token") else {
+//            print("token not found")
+//            return
+//        }
         
         Webservice().getUserExpenses(token: token) { (result) in
             switch result {
                 case .success(let budget):
+                    print("successful expenses fetch")
                     DispatchQueue.main.async {
                         self.expenses = budget.map(ExpenseViewModel.init)
                     }
                 case .failure(let error):
+                    print("unsuccessful budget fetch")
                     print(error.localizedDescription)
             }
         }
