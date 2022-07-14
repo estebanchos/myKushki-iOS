@@ -15,11 +15,9 @@ class LoginViewModel: ObservableObject {
     func login(email:String, password:String) {
         
         let defaults = UserDefaults.standard
-        print("email is \(email) and password \(password)")
         Webservice().login(email: email, password: password) { result in
             switch result {
                 case .success(let token):
-                    print("setting token with \(token)")
                     defaults.setValue(token, forKey: "token")
                     DispatchQueue.main.async {
                         self.isAuthenticated = true

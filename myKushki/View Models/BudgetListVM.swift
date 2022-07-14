@@ -21,12 +21,10 @@ class BudgetListViewModel: ObservableObject {
         Webservice().getUserBudget(token: token) { (result) in
             switch result {
                 case .success(let budget):
-                    print("successful budget fetch")
                     DispatchQueue.main.async {
                         self.budget = budget.map(BudgetViewModel.init)
                     }
                 case .failure(let error):
-                    print("unsuccessful budget fetch")
                     print(error.localizedDescription)
             }
         }
