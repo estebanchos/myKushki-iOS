@@ -53,12 +53,11 @@ struct ContentView: View {
                         .cornerRadius(20.0)
                         .shadow(radius: 10.0, x: 10, y: 10)
                 }.padding(.top, 50)
-                
                 Spacer()
                 HStack {
                     Text("Don't have an account? ")
                         .foregroundColor(.white)
-                    Button(action: {}) {
+                    Link(destination: URL(string: "https://mykushki.herokuapp.com/register")!) {
                         Text("Sign Up")
                             .foregroundColor(.white)
                             .bold()
@@ -68,52 +67,53 @@ struct ContentView: View {
             }
             .background(Color("mk-main"))
         } else if (loginVM.isAuthenticated && budgetListVM.budget.count < 1) {
-            VStack {
-                Text("Your Dashboard")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(.white)
-                    .padding(.top, 20)
-                    .padding(.bottom, 10)
-                
-                Button(action: {
-                    budgetListVM.getAllBudget(token: loginVM.token)
-                    expensesListVM.getAllExpenses(token: loginVM.token)
-                }) {
-                    Text("Open Tracker")
-                        .font(.headline)
+            ZStack {
+                Color("mk-main").ignoresSafeArea()
+                VStack {
+                    Text("Your Dashboard")
+                        .font(.title)
+                        .bold()
                         .foregroundColor(.white)
-                        .padding()
-                        .frame(width: 200, height: 60)
-                        .background(Color("button"))
-                        .cornerRadius(20.0)
-                        .shadow(radius: 10.0, x: 10, y: 10)
-                }.padding(.top, 30)
-                Button(action: {}) {
-                    Text("Start Budget")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width: 200, height: 60)
-                        .background(Color("button"))
-                        .cornerRadius(20.0)
-                        .shadow(radius: 10.0, x: 10, y: 10)
-                }.padding(.top, 30)
-                Button(action: {}) {
-                    Text("Continue Learning")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width: 200, height: 60)
-                        .background(Color("button"))
-                        .cornerRadius(20.0)
-                        .shadow(radius: 10.0, x: 10, y: 10)
-                }.padding(.top, 30)
-                Spacer()
+                        .padding(.top, 20)
+                        .padding(.bottom, 10)
+                    
+                    Button(action: {
+                        budgetListVM.getAllBudget(token: loginVM.token)
+                        expensesListVM.getAllExpenses(token: loginVM.token)
+                    }) {
+                        Text("Open Tracker")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(width: 200, height: 60)
+                            .background(Color("button"))
+                            .cornerRadius(20.0)
+                            .shadow(radius: 10.0, x: 10, y: 10)
+                    }.padding(.top, 30)
+                    Button(action: {}) {
+                        Text("Start Budget")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(width: 200, height: 60)
+                            .background(Color("button"))
+                            .cornerRadius(20.0)
+                            .shadow(radius: 10.0, x: 10, y: 10)
+                    }.padding(.top, 30)
+                    Button(action: {}) {
+                        Text("Continue Learning")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(width: 200, height: 60)
+                            .background(Color("button"))
+                            .cornerRadius(20.0)
+                            .shadow(radius: 10.0, x: 10, y: 10)
+                    }.padding(.top, 30)
+                    Spacer()
+                }
             }
-            .background(Color("mk-main"))
         } else {
-            
             VStack() {
                 Text("Expense Tracker")
                     .font(.title)
